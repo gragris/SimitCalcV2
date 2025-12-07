@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimitCalc 🦄</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Cute Background Stickers -->
+    <div class="sticker">🦄</div>
+    <div class="sticker">🌸</div>
+    <div class="sticker">✨</div>
+    <div class="sticker">💖</div>
+    <div class="sticker" style="top: 50%; left: 5%;">🍩</div>
+    <div class="sticker" style="top: 50%; right: 5%;">🎀</div>
+
+    <div class="app-container">
+        <div class="calculator-window">
+            <div class="title-bar">
+                <div class="traffic-light close"></div>
+                <div class="traffic-light minimize"></div>
+                <div class="traffic-light maximize"></div>
+            </div>
+
+            <!-- User Logo -->
+            <img id="user-logo" src="toprightsticker.jpg" alt="User Logo">
+
+            <div class="display-container">
+                <div class="previous-operand" id="previous-operand"></div>
+                <div class="current-operand" id="current-operand">0</div>
+            </div>
+
+            <div class="keypad">
+                <!-- Row 1 -->
+                <button class="btn-orange" onclick="clearDisplay()">AC</button>
+                <button class="btn-orange" onclick="deleteLast()">DEL</button>
+                <button class="btn-pink" onclick="appendOperator('%')">%</button>
+                <button class="btn-pink" onclick="appendOperator('/')">÷</button>
+
+                <!-- Row 2 -->
+                <button class="btn-yellow" onclick="appendNumber('7')">7</button>
+                <button class="btn-yellow" onclick="appendNumber('8')">8</button>
+                <button class="btn-yellow" onclick="appendNumber('9')">9</button>
+                <button class="btn-pink" onclick="appendOperator('*')">×</button>
+
+                <!-- Row 3 -->
+                <button class="btn-purple" onclick="appendNumber('4')">4</button>
+                <button class="btn-purple" onclick="appendNumber('5')">5</button>
+                <button class="btn-purple" onclick="appendNumber('6')">6</button>
+                <button class="btn-pink" onclick="appendOperator('-')">-</button>
+
+                <!-- Row 4 -->
+                <button class="btn-green" onclick="appendNumber('1')">1</button>
+                <button class="btn-green" onclick="appendNumber('2')">2</button>
+                <button class="btn-green" onclick="appendNumber('3')">3</button>
+                <button class="btn-pink" onclick="appendOperator('+')">+</button>
+
+                <!-- Row 5 -->
+                <button class="btn-blue zero" onclick="appendNumber('0')">0</button>
+                <button class="btn-blue" onclick="appendNumber('.')">.</button>
+                <button class="btn-blue" onclick="calculate()">=</button>
+            </div>
+        </div>
+
+        <div class="history-panel">
+            <div class="history-header">
+                <h3>Geçmiş</h3>
+                <button id="clear-history" title="Geçmişi Temizle">🗑️</button>
+            </div>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
